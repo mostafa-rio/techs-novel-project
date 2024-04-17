@@ -138,6 +138,7 @@ function UsersTable() {
                 </TableCell>
                 <TableCell align="left">
                   <IconButton
+                    aria-label="edit"
                     onClick={(e) => {
                       e.stopPropagation();
                       setUserToUpdate(user);
@@ -146,6 +147,7 @@ function UsersTable() {
                     <EditIcon color="info" />
                   </IconButton>
                   <IconButton
+                    aria-label="delete"
                     disabled={isDeleting}
                     onClick={(e) => {
                       e.stopPropagation();

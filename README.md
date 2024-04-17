@@ -16,6 +16,12 @@ run the development server:
 npm run dev
 ```
 
+run tests:
+
+```bash
+npx cypress open
+```
+
 build the project:
 
 ```bash

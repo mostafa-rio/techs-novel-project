@@ -22,7 +22,7 @@ import ErrorBox from "./ErrorBox";
 import LoadingBox from "./LoadingBox";
 import UpdateUserModal from "./UpdateUserModal";
 
-export default function UsersTable() {
+function UsersTable() {
   const router = useRouter();
   const [page, setPage] = useState(1);
   const {
@@ -77,6 +77,7 @@ export default function UsersTable() {
         {/* //!Table Top action buttons */}
         <div className="flex p-4 mb-5">
           <Button
+            size="small"
             onClick={() => {
               refetch();
               toast.success("Users table is synced with server!", {
@@ -84,14 +85,15 @@ export default function UsersTable() {
               });
             }}
             variant="contained"
-            className="ml-auto"
+            className="ml-auto text-xs"
           >
             Refetch Users
           </Button>
           <Button
+            size="small"
             onClick={() => setIsCreateModalOpen(true)}
             variant="contained"
-            className="ml-2"
+            className="ml-2 text-xs"
             startIcon={<AddIcon />}
           >
             Create User
@@ -131,7 +133,9 @@ export default function UsersTable() {
                     </Typography>
                   </div>
                 </TableCell>
-                <TableCell align="left">{user.email}</TableCell>
+                <TableCell align="left" className="text-xs">
+                  {user.email}
+                </TableCell>
                 <TableCell align="left">
                   <IconButton
                     onClick={(e) => {
@@ -166,3 +170,5 @@ export default function UsersTable() {
     </>
   );
 }
+
+export default UsersTable;

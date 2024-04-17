@@ -1,5 +1,4 @@
 import Providers from "@/providers";
-import { Container } from "@mui/material";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Toaster } from "react-hot-toast";
@@ -22,7 +21,8 @@ export default function RootLayout({
       <body className={inter.className}>
         <Providers>
           <Toaster />
-          <Container className="mx-auto">{children}</Container>
+          <div className="mx-auto container p-5">{children}</div>
+          {/* <Container className="mx-auto">{children}</Container> */}
         </Providers>
       </body>
     </html>

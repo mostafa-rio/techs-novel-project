@@ -7,7 +7,7 @@ import {
 import { useAppDispatch } from "@/redux/store";
 import toast from "react-hot-toast";
 
-export default (page: number) => {
+const useHandleUserDelete = (page: number) => {
   const [deleteUserMutate, { isLoading: isDeleting }] = useDeleteUserMutation();
   const { refetch } = useGetUsersQuery(page);
   const dispatch = useAppDispatch();
@@ -22,15 +22,15 @@ export default (page: number) => {
             users.data = users.data.filter((userItem) => userItem.id !== id);
           })
         );
+        setTimeout(() => {
+          refetch();
+        }, RevalidateAfter * 1000);
         toast.success(
           "User deleted successfully! Table will be synced with the server each " +
             RevalidateAfter +
             " seconds!",
           { duration: 10000 }
         );
-        setTimeout(() => {
-          refetch();
-        }, RevalidateAfter * 1000);
       }
     } catch (err) {
       toast.error("Failed to delete user! Please try again");
@@ -38,3 +38,4 @@ export default (page: number) => {
   };
   return { handleDelete, isDeleting };
 };
+export default useHandleUserDelete;

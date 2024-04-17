@@ -16,7 +16,7 @@ import TableRow from "@mui/material/TableRow";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import useHandleUserDelete from "../hooks/useHandleUserDelete";
+import useHandleUserDelete from "../../hooks/useHandleUserDelete";
 import CreateUserModal from "./CreateUserModal";
 import ErrorBox from "./ErrorBox";
 import LoadingBox from "./LoadingBox";
@@ -44,6 +44,7 @@ export default function UsersTable() {
 
   return (
     <>
+      {/* //!Create user modal */}
       {isCreateModalOpen && (
         <CreateUserModal
           page={page}
@@ -56,6 +57,8 @@ export default function UsersTable() {
           open={isCreateModalOpen}
         />
       )}
+
+      {/* //!Update user modal */}
       {userToUpdate && (
         <UpdateUserModal
           page={page}
@@ -69,7 +72,9 @@ export default function UsersTable() {
           }}
         />
       )}
+
       <TableContainer component={Paper}>
+        {/* //!Table Top action buttons */}
         <div className="flex p-4 mb-5">
           <Button
             onClick={() => {
@@ -92,6 +97,7 @@ export default function UsersTable() {
             Create User
           </Button>
         </div>
+
         <Table aria-label="users table">
           <TableHead>
             <TableRow>

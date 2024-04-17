@@ -1,3 +1,4 @@
+"use client";
 import { Button, Card, Typography } from "@mui/material";
 type Props = {
   title: string;

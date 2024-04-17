@@ -1,15 +1,10 @@
-import { Button } from "@mui/material";
+import UsersTable from "./components/UsersTable";
 
 export default function Home() {
   return (
-    <div>
-      hello world
-      <Button>click here</Button>
-      <hr />
-      <br />
-      <Button color="info" className="bg-red-400">
-        click
-      </Button>
-    </div>
+    <main>
+      <h1>List of Users</h1>
+      <UsersTable />
+    </main>
   );
 }

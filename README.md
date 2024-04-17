@@ -1,12 +1,18 @@
 ## Project Structure
 
-src/app/components: contains components used in home page (list of users)
-src/app/details/[id]: is the user details page
-src/hooks: contains project hooks
-src/provider: contains configuration providers for MUI and Redux
-src/redux: includes store structure and feature slices
-src/types: contains typescript types used in application
-src/constants.ts: contains project constants variables
+#### src/app/components: contains components used in home page (list of users)
+
+#### src/app/details/[id]: is the user details page
+
+#### src/hooks: contains project hooks
+
+#### src/provider: contains configuration providers for MUI and Redux
+
+#### src/redux: includes store structure and feature slices
+
+#### src/types: contains typescript types used in application
+
+#### src/constants.ts: contains project constants variables
 
 ## Getting Started
 

@@ -1,7 +1,8 @@
-import MUIProvider from "@/providers/MUIProvider";
+import Providers from "@/providers";
 import { Container } from "@mui/material";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Toaster } from "react-hot-toast";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -19,9 +20,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <MUIProvider>
+        <Providers>
+          <Toaster />
           <Container className="mx-auto">{children}</Container>
-        </MUIProvider>
+        </Providers>
       </body>
     </html>
   );

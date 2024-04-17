@@ -1,26 +1,22 @@
 import { Button, Card, Typography } from "@mui/material";
-import Link from "next/link";
 type Props = {
-  link: string;
-  buttonTitle: string;
   title: string;
-  desc: string;
+  message: string;
 };
 
-function ErrorBox({ link, title, buttonTitle, desc }: Props) {
+function ErrorBox({ title, message }: Props) {
   return (
     <div className="flex w-screen h-screen">
       <Card className="m-auto text-center h-fit w-fit p-10">
         <Typography className="text-2xl">{title}</Typography>
-        <Typography className="text-xs mt-2">{desc}</Typography>
+        <Typography className="text-xs mt-2">{message}</Typography>
         <div className="mt-4 mx-auto gap-4">
           <Button
             disableElevation
             variant="contained"
-            LinkComponent={Link}
-            href={link}
+            onClick={() => window.location.reload()}
           >
-            {buttonTitle}
+            Reload the page
           </Button>
         </div>
       </Card>
